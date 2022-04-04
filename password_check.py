@@ -7,14 +7,22 @@ Name: Kaung Sithu
 
 def main():
     """Start Program"""
-    text = input("Enter a string: ")
-    print(count_character(text))
-    print("Does it comply with the rule? {}".format(check_char(text)))
+    password = get_password()
+    print(display_asterisks(password))
+    print("Does it comply with the rule? {}".format(check_char(password)))
 
 
-def count_character(txt):
+def get_password():
+    """Prevent blank input"""
+    psw = input("Enter a string: ")
+    while psw == "":
+        psw = input("Enter a string: ")
+    return psw
+
+
+def display_asterisks(password):
     """Return the length of string as asterisks."""
-    return len(txt) * "*"
+    return len(password) * "*"
 
 
 def check_char(txt):
